@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="te-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaMajaKalyanam – Dr. Saicharan & Padmaja</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=IM+Fell+English:ital@0;1&family=Noto+Sans+Telugu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDF5E0;--bg2:#FAF0CC;--maroon:#4A0A12;--maroon2:#6B1422;
+  --gold:#B8882A;--gold-lt:#D4AF50;--gold-pale:#F0D878;--gold-shine:#FFE97A;
+  --peacock:#004D4D;--copper:#A0522D;--saffron:#C8601A;--ivory:#FFF8E8;--ink:#1E0A04;
+  --ff-head:'IM Fell English',serif;--ff-body:'Cormorant Garamond',serif;--ff-tel:'Noto Sans Telugu',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg2);color:var(--ink);font-family:var(--ff-body);font-size:1.1rem;line-height:1.75}
+
+.page{max-width:900px;margin:2.5rem auto;background:var(--bg);position:relative}
+.page-border{
+  border:1px solid var(--gold);
+  box-shadow:0 0 0 4px var(--bg),0 0 0 6px var(--gold),0 0 0 10px var(--bg),0 0 0 12px var(--maroon),0 0 40px rgba(74,10,18,.35),inset 0 0 60px rgba(184,136,42,.07);
+  margin:16px;
+}
+.page-border::before{
+  content:'';position:absolute;inset:0;z-index:0;opacity:.03;pointer-events:none;
+  background-image:repeating-linear-gradient(0deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 32px),repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 32px);
+}
+.corners{position:relative}
+.co{position:absolute;width:100px;height:100px;z-index:5;pointer-events:none}
+.co.tl{top:-1px;left:-1px}.co.tr{top:-1px;right:-1px;transform:scaleX(-1)}.co.bl{bottom:-1px;left:-1px;transform:scaleY(-1)}.co.br{bottom:-1px;right:-1px;transform:scale(-1)}
+
+/* HEADER */
+header{position:relative;z-index:1;text-align:center;padding:4rem 2rem 3rem;background:linear-gradient(175deg,#1a0005 0%,#3d0010 25%,#5a0018 50%,#3d0010 75%,#1a0005 100%);overflow:hidden}
+header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0,transparent 18px,rgba(255,220,80,.04) 19px,rgba(255,220,80,.04) 20px);pointer-events:none}
+header::after{content:'';position:absolute;left:5%;right:5%;top:18px;height:2px;background:linear-gradient(90deg,transparent,var(--gold-lt),var(--gold-shine),var(--gold-lt),transparent);box-shadow:0 2px 0 rgba(212,175,80,.3)}
+.hdr-bot-line{position:absolute;left:5%;right:5%;bottom:18px;height:2px;background:linear-gradient(90deg,transparent,var(--gold-lt),var(--gold-shine),var(--gold-lt),transparent)}
+.tel-blessing{font-family:var(--ff-tel);font-size:1rem;color:var(--gold-pale);letter-spacing:.1rem;margin-bottom:.8rem;opacity:.9}
+.invite-ribbon{display:inline-block;background:linear-gradient(90deg,transparent,var(--gold) 20%,var(--gold-shine) 50%,var(--gold) 80%,transparent);color:var(--maroon);font-size:.7rem;font-family:var(--ff-body);font-weight:700;letter-spacing:.45rem;text-transform:uppercase;padding:.28rem 2.5rem;margin-bottom:1.4rem}
+header h1{font-family:var(--ff-head);font-style:italic;font-size:clamp(1.1rem,2.5vw,1.4rem);color:rgba(255,230,140,.75);letter-spacing:.05rem;margin-bottom:.5rem;font-weight:400}
+.names-wrap{margin:.6rem 0 1.2rem}
+.name-groom,.name-bride{display:block;font-family:var(--ff-head);font-size:clamp(2.4rem,6vw,4rem);color:var(--gold-shine);text-shadow:0 2px 20px rgba(255,200,40,.5),0 0 2px #fff4;line-height:1.1;letter-spacing:.03rem}
+.name-sep{display:block;font-size:1.6rem;color:var(--gold-pale);margin:.2rem 0;opacity:.8;letter-spacing:.3rem}
+.date-wrap{display:inline-flex;align-items:center;gap:1rem;margin-top:.6rem;border:1px solid var(--gold-lt);padding:.55rem 2rem;background:rgba(255,220,80,.08);font-family:var(--ff-head);font-size:1rem;color:var(--gold-pale);letter-spacing:.18rem}
+.date-wrap span{color:var(--gold-shine);font-size:1.3rem}
+
+/* DIVIDERS */
+.div-band{background:linear-gradient(90deg,var(--maroon),var(--maroon2) 30%,var(--maroon) 70%,var(--maroon));text-align:center;padding:.45rem 0;position:relative;z-index:1;color:var(--gold-shine);letter-spacing:.7rem;font-size:1rem;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.rule-gold{height:1px;background:linear-gradient(90deg,transparent 0%,var(--gold-lt) 20%,var(--gold-shine) 50%,var(--gold-lt) 80%,transparent);margin:0 3rem;position:relative;z-index:1}
+
+/* VERSE */
+.verse{position:relative;z-index:1;text-align:center;padding:2rem 4rem;background:linear-gradient(180deg,rgba(184,136,42,.1),rgba(74,10,18,.05));border-left:4px solid var(--gold);border-right:4px solid var(--gold)}
+.verse p{font-style:italic;font-size:1.2rem;color:var(--maroon2);line-height:1.8}
+.verse .tel{font-family:var(--ff-tel);font-size:.95rem;display:block;margin-top:.6rem;color:var(--peacock);opacity:.9}
+
+/* FAMILIES */
+.families{position:relative;z-index:1;display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:0;padding:2.5rem 3rem;background:var(--ivory);border-top:1px solid #e8d090;border-bottom:1px solid #e8d090}
+.fam{text-align:center;padding:0 1rem}
+.fam h3{font-family:var(--ff-head);font-style:italic;color:var(--maroon);font-size:1.3rem;margin-bottom:.8rem}
+.fam .person{font-weight:700;font-size:1.1rem;color:var(--peacock)}
+.fam .parents{font-size:.9rem;color:var(--copper);margin:.3rem 0}
+.fam .village{font-size:.8rem;font-style:italic;color:var(--maroon2);opacity:.85}
+.fam-sep{text-align:center;font-size:2.8rem}
+
+/* STORY */
+.story{position:relative;z-index:1;padding:2.5rem 4rem;text-align:center;background:linear-gradient(180deg,#fff8f0,var(--bg))}
+.story h2{font-family:var(--ff-head);font-style:italic;font-size:1.7rem;color:var(--maroon);margin-bottom:1rem}
+.story p{font-size:1rem;color:#3a1a0a;max-width:600px;margin:0 auto;line-height:1.9}
+
+/* EVENTS */
+.events{position:relative;z-index:1;padding:2.5rem 2rem}
+.events-title{font-family:var(--ff-head);font-size:2rem;color:var(--maroon);text-align:center;margin-bottom:.4rem}
+.events-sub{text-align:center;font-style:italic;color:var(--gold);font-size:1rem;letter-spacing:.15rem;margin-bottom:2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.grid-full{grid-column:1/-1}
+
+/* CARD */
+.card{border:1px solid var(--gold);box-shadow:0 0 0 3px var(--bg),0 0 0 4px var(--gold-lt),4px 6px 24px rgba(74,10,18,.18);background:var(--ivory);transition:transform .3s,box-shadow .3s;overflow:hidden}
+.card:hover{transform:translateY(-5px);box-shadow:0 0 0 3px var(--bg),0 0 0 4px var(--gold-lt),6px 14px 36px rgba(74,10,18,.28)}
+
+/* ── CSS ART: POCHAM PANDUGA – Diya lamps at dusk ── */
+.art-pocham{height:185px;position:relative;overflow:hidden;background:linear-gradient(180deg,#0d0020 0%,#1a0040 40%,#2d1060 70%,#3d1800 100%)}
+.art-pocham::before{content:'✦ · ✦ · · ✦ · ✦ · · ✦ ✦ · ✦';position:absolute;top:8px;left:0;right:0;text-align:center;font-size:.55rem;color:rgba(255,240,180,.6);letter-spacing:.6rem;animation:twinkle 3s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.4}to{opacity:1}}
+.art-pocham::after{content:'';position:absolute;bottom:0;left:0;right:0;height:70px;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(255,120,0,.45) 0%,rgba(255,60,0,.2) 40%,transparent 70%)}
+.diya-row{position:absolute;bottom:22px;left:0;right:0;display:flex;justify-content:center;gap:28px;align-items:flex-end}
+.diya{position:relative;width:22px}
+.diya-body{width:22px;height:10px;background:linear-gradient(90deg,#b36200,#e08000,#b36200);border-radius:50% 50% 30% 30%}
+.flame{width:8px;height:16px;background:linear-gradient(0deg,#ff6000,#ffcc00,#fff8e0);border-radius:50% 50% 30% 30%;position:absolute;top:-15px;left:7px;box-shadow:0 0 8px 3px rgba(255,150,0,.6),0 0 16px 6px rgba(255,80,0,.3);animation:flicker 1.4s ease-in-out infinite alternate}
+.diya:nth-child(2) .flame{animation-delay:.3s}.diya:nth-child(3) .flame{animation-delay:.7s}.diya:nth-child(4) .flame{animation-delay:.5s}.diya:nth-child(5) .flame{animation-delay:.2s}
+@keyframes flicker{from{transform:scale(1) skewX(0deg)}to{transform:scale(.85) skewX(5deg)}}
+.rangoli-line{position:absolute;bottom:10px;left:10%;right:10%;height:2px;background:repeating-linear-gradient(90deg,var(--gold-shine) 0,var(--gold-shine) 8px,transparent 8px,transparent 16px,#ff6060 16px,#ff6060 24px,transparent 24px,transparent 32px,#60d060 32px,#60d060 40px,transparent 40px,transparent 48px)}
+
+/* ── CSS ART: HALDI – Golden turmeric ── */
+.art-haldi{height:185px;position:relative;overflow:hidden;background:linear-gradient(160deg,#5a2d00 0%,#8b4800 30%,#c47800 65%,#e8b000 100%)}
+.art-haldi::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 80%,rgba(255,240,100,.35) 0%,transparent 70%)}
+.turmeric-dots{position:absolute;inset:0;background-image:radial-gradient(circle 3px at 20% 30%,rgba(255,230,50,.6) 0%,transparent 100%),radial-gradient(circle 4px at 45% 20%,rgba(255,200,30,.5) 0%,transparent 100%),radial-gradient(circle 2px at 70% 35%,rgba(255,240,80,.7) 0%,transparent 100%),radial-gradient(circle 5px at 80% 55%,rgba(255,220,40,.4) 0%,transparent 100%),radial-gradient(circle 3px at 30% 60%,rgba(255,200,60,.5) 0%,transparent 100%),radial-gradient(circle 4px at 60% 70%,rgba(255,180,20,.6) 0%,transparent 100%),radial-gradient(circle 6px at 85% 25%,rgba(255,210,50,.4) 0%,transparent 100%)}
+.leaf-row{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:18px;align-items:flex-end}
+.leaf{width:28px;height:50px;background:linear-gradient(160deg,#1a6600,#2d9900,#1a6600);border-radius:50% 50% 50% 20%/50% 50% 50% 30%;position:relative}
+.leaf::after{content:'';position:absolute;left:50%;top:10%;bottom:10%;width:1px;background:rgba(255,255,255,.3);transform:translateX(-50%)}
+.haldi-bowl{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:60px;height:28px;background:linear-gradient(180deg,#c47800,#8b4800);border-radius:50% 50% 40% 40%;border-top:6px solid #e8b000}
+
+/* ── CSS ART: PELLI KODUKU – Royal procession ── */
+.art-pelli{height:185px;position:relative;overflow:hidden;background:linear-gradient(160deg,#0a0030 0%,#150060 40%,#2a0080 70%,#1a004a 100%)}
+.art-pelli::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 30% 50%,rgba(180,120,255,.12) 0%,transparent 60%)}
+.arch{position:absolute;left:50%;transform:translateX(-50%);top:12px;width:140px;height:100px;border:3px solid var(--gold-shine);border-bottom:none;border-radius:70px 70px 0 0;background:none}
+.arch::before{content:'';position:absolute;inset:6px;border:1px solid rgba(255,220,80,.3);border-bottom:none;border-radius:60px 60px 0 0}
+.garland{position:absolute;top:100%;left:-4px;right:-4px;height:24px;background:radial-gradient(circle 5px at 10% 50%,#ff6060 0%,transparent 80%),radial-gradient(circle 5px at 30% 70%,#ff9900 0%,transparent 80%),radial-gradient(circle 5px at 50% 40%,#ff6060 0%,transparent 80%),radial-gradient(circle 5px at 70% 70%,#ff9900 0%,transparent 80%),radial-gradient(circle 5px at 90% 50%,#ff6060 0%,transparent 80%);border-bottom:2px solid rgba(100,200,80,.5)}
+.horse{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:60px;height:45px}
+.horse-body{position:absolute;bottom:0;left:10px;width:40px;height:28px;background:rgba(255,220,80,.8);border-radius:40% 60% 50% 40%}
+.horse-head{position:absolute;bottom:22px;right:0;width:20px;height:16px;background:rgba(255,220,80,.8);border-radius:60% 40% 30% 50%;transform:rotate(-20deg)}
+.horse-legs{position:absolute;bottom:0;left:10px;width:40px;height:14px;background:repeating-linear-gradient(90deg,rgba(255,200,60,.7) 0,rgba(255,200,60,.7) 5px,transparent 5px,transparent 12px);border-radius:0 0 4px 4px}
+.confetti-row{position:absolute;top:0;left:0;right:0;height:30px;background-image:radial-gradient(circle 2px at 15% 60%,#ff6060 0%,transparent 80%),radial-gradient(circle 2px at 35% 40%,var(--gold-shine) 0%,transparent 80%),radial-gradient(circle 2px at 55% 70%,#60d0ff 0%,transparent 80%),radial-gradient(circle 2px at 75% 30%,#ff9900 0%,transparent 80%),radial-gradient(circle 2px at 90% 55%,#ff6060 0%,transparent 80%)}
+.ground-strip{position:absolute;bottom:0;left:0;right:0;height:30px;background:repeating-linear-gradient(90deg,rgba(180,100,0,.5) 0,rgba(180,100,0,.5) 20px,rgba(120,60,0,.5) 20px,rgba(120,60,0,.5) 40px);border-top:2px solid var(--gold)}
+
+/* ── CSS ART: JILAKARA BELLAM – Sacred fire ── */
+.art-jilakara{height:185px;position:relative;overflow:hidden;background:linear-gradient(160deg,#1a0800 0%,#3d1200 35%,#7a2800 65%,#3d1200 100%)}
+.art-jilakara::before{content:'';position:absolute;bottom:0;left:0;right:0;height:90px;background:radial-gradient(ellipse 80% 100% at 50% 100%,rgba(255,180,0,.5) 0%,rgba(255,80,0,.25) 40%,transparent 70%)}
+.fire-wrap{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);width:80px}
+.fire-base{width:80px;height:20px;background:linear-gradient(90deg,#8b3000,#c05000,#8b3000);border-radius:4px}
+.fire-main{width:30px;height:55px;background:linear-gradient(0deg,#ff3000,#ff8000,#ffcc00,rgba(255,255,200,.6));border-radius:50% 50% 30% 30%;margin:-4px auto 0;box-shadow:0 0 20px 8px rgba(255,100,0,.4),0 0 40px 15px rgba(255,50,0,.2);animation:fireanim 1.6s ease-in-out infinite alternate}
+.fire-side{width:18px;height:36px;background:linear-gradient(0deg,#ff6000,#ffaa00,rgba(255,220,100,.5));border-radius:50% 50% 30% 30%;position:absolute;bottom:20px;box-shadow:0 0 12px 5px rgba(255,120,0,.3);animation:fireanim 1.2s ease-in-out infinite alternate}
+.fire-side.l{left:10px;animation-delay:.4s}.fire-side.r{right:10px;animation-delay:.7s}
+@keyframes fireanim{from{transform:scaleX(1) skewX(0deg);opacity:1}to{transform:scaleX(.82) skewX(6deg);opacity:.85}}
+.smoke{position:absolute;bottom:80px;left:50%;width:4px;background:linear-gradient(0deg,rgba(200,180,160,.4),transparent);border-radius:4px;animation:smokrise 3s ease-out infinite}
+.smoke:nth-child(1){height:50px;transform:translateX(-10px);animation-delay:0s}.smoke:nth-child(2){height:40px;transform:translateX(8px);animation-delay:1s}.smoke:nth-child(3){height:60px;transform:translateX(-20px);animation-delay:2s}
+@keyframes smokrise{from{opacity:.5;transform:translateY(0) translateX(-10px)}to{opacity:0;transform:translateY(-40px) translateX(10px)}}
+.kalash{position:absolute;bottom:28px;width:26px;height:34px}
+.kalash.l{left:calc(50% - 70px)}.kalash.r{right:calc(50% - 70px)}
+.kalash-body{width:26px;height:24px;background:linear-gradient(90deg,#8b6200,#d4a030,#8b6200);border-radius:30% 30% 50% 50%}
+.kalash-neck{width:14px;height:8px;background:#c07800;border-radius:4px 4px 0 0;margin:0 auto}
+.kalash-top{width:18px;height:5px;background:#e09000;border-radius:50%;margin:0 auto}
+
+/* ── CSS ART: MUDU MULLU – Floral ritual ── */
+.art-mudu{height:185px;position:relative;overflow:hidden;background:linear-gradient(160deg,#3d0028 0%,#6b0042 40%,#9b006a 70%,#4a001e 100%)}
+.art-mudu::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 60%,rgba(255,150,200,.1) 0%,transparent 60%)}
+.mandala{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border-style:solid;border-color:rgba(255,180,220,.25)}
+.mandala:nth-child(1){width:130px;height:130px;border-width:1px}.mandala:nth-child(2){width:100px;height:100px;border-width:1px;border-color:rgba(255,180,220,.35)}.mandala:nth-child(3){width:70px;height:70px;border-width:1px;border-color:rgba(255,180,220,.5)}
+.rose-c{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-wrap:wrap;width:56px;gap:3px;justify-content:center;align-items:center}
+.petal{width:16px;height:16px;border-radius:50% 0 50% 0;background:radial-gradient(circle at 40% 40%,#ff9ecc,#cc0055);transform:rotate(var(--r))}
+.thorn-trio{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:12px;align-items:flex-end}
+.thorn{width:10px;height:28px;background:linear-gradient(0deg,#1a6600,#33aa00);border-radius:50% 50% 30% 30%;position:relative}
+.thorn::after{content:'';position:absolute;top:2px;right:-6px;width:12px;height:12px;background:radial-gradient(circle at 35% 35%,#ff1493,#880055);border-radius:50%}
+
+/* ── CSS ART: KALYANAM – Grand mandap ── */
+.art-kalyanam{height:220px;position:relative;overflow:hidden;background:linear-gradient(165deg,#1a0000 0%,#3d0008 20%,#6b0015 45%,#8b2200 70%,#4a0800 100%)}
+.art-kalyanam::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 60%,rgba(255,180,60,.12) 0%,transparent 60%),radial-gradient(ellipse 30% 40% at 50% 85%,rgba(255,100,0,.25) 0%,transparent 60%)}
+.pillar{position:absolute;bottom:30px;width:16px;background:linear-gradient(90deg,#8b5800,#d4a030,#c08000,#d4a030,#8b5800);border-radius:3px}
+.pillar.p1{left:10%;height:100px}.pillar.p2{right:10%;height:100px}.pillar.p3{left:25%;height:90px}.pillar.p4{right:25%;height:90px}
+.mandap-roof{position:absolute;top:20px;left:6%;right:6%;height:30px;background:linear-gradient(90deg,#8b5800,#d4a030,#e8c060,#d4a030,#8b5800);border-radius:2px;box-shadow:0 2px 12px rgba(255,180,0,.3)}
+.mandap-roof::before{content:'';position:absolute;left:-10px;right:-10px;top:-6px;height:10px;background:linear-gradient(90deg,var(--gold),var(--gold-shine),var(--gold));border-radius:2px}
+.swag{position:absolute;top:50px;height:30px;width:22%;border:none;background:none;box-shadow:0 12px 0 -4px rgba(255,80,80,.6);border-radius:0 0 50% 50%}
+.swag:nth-child(1){left:6%}.swag:nth-child(2){left:28%}.swag:nth-child(3){right:28%}.swag:nth-child(4){right:6%}
+.silh{position:absolute;bottom:26px;width:22px;height:55px}
+.silh.bride{left:calc(50% - 38px)}.silh.groom{left:calc(50% + 16px)}
+.silh-head{width:16px;height:16px;border-radius:50%;background:rgba(255,200,100,.8);margin:0 auto 2px}
+.silh-body{width:22px;height:38px;border-radius:40% 40% 20% 20%}
+.silh.bride .silh-body{background:linear-gradient(160deg,#cc0050,#880030)}.silh.groom .silh-body{background:linear-gradient(160deg,#003366,#001144)}
+.center-fire{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);width:40px}
+.c-fire-base{width:40px;height:14px;background:linear-gradient(90deg,#8b3000,#c05000,#8b3000);border-radius:3px}
+.c-fire-body{width:20px;height:42px;background:linear-gradient(0deg,#ff4000,#ff9000,#ffdd00,rgba(255,255,200,.7));border-radius:50% 50% 30% 30%;margin:-2px auto 0;box-shadow:0 0 18px 7px rgba(255,120,0,.5);animation:fireanim 1.8s ease-in-out infinite alternate}
+.flower-base{position:absolute;bottom:0;left:0;right:0;height:30px;background:repeating-linear-gradient(90deg,rgba(255,80,80,.5) 0,rgba(255,80,80,.5) 8px,rgba(255,160,0,.5) 8px,rgba(255,160,0,.5) 16px,rgba(80,200,80,.4) 16px,rgba(80,200,80,.4) 24px,rgba(255,80,80,.5) 24px,rgba(255,80,80,.5) 32px);border-top:2px solid var(--gold-shine)}
+
+.art-label{position:absolute;top:10px;right:12px;font-size:.6rem;letter-spacing:.12rem;color:rgba(255,255,255,.35);font-family:var(--ff-body);text-transform:uppercase}
+
+/* CARD BODY */
+.card-body{padding:1.2rem 1.4rem;border-top:2px solid var(--gold-lt)}
+.card-body h3{font-family:var(--ff-head);font-style:italic;font-size:1.25rem;color:var(--maroon);margin-bottom:.25rem}
+.card-body .meta{font-size:.78rem;color:var(--peacock);letter-spacing:.08rem;margin-bottom:.55rem;font-style:italic;display:flex;align-items:center;gap:.4rem}
+.meta-dot{color:var(--gold)}
+.card-body p{font-size:.9rem;line-height:1.75;color:#3a1a08}
+.muhurtham-badge{display:inline-block;margin-bottom:.5rem;background:linear-gradient(90deg,var(--saffron),#e09000);color:#fff;font-size:.7rem;letter-spacing:.2rem;padding:.2rem .8rem;border-radius:2px;font-family:var(--ff-body);font-weight:700}
+
+/* VENUE */
+.venue{position:relative;z-index:1;text-align:center;padding:3rem 2rem;background:linear-gradient(170deg,#0f0008 0%,#250018 35%,#1a0030 65%,#0f0008 100%);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);overflow:hidden}
+.venue::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(60deg,transparent 0,transparent 30px,rgba(180,140,255,.02) 30px,rgba(180,140,255,.02) 31px)}
+.venue h2{font-family:var(--ff-head);font-size:2rem;font-style:italic;color:var(--gold-shine);margin-bottom:.3rem;position:relative}
+.venue-sub{font-size:.75rem;letter-spacing:.35rem;color:rgba(255,200,120,.6);margin-bottom:1.5rem;position:relative}
+.venue-name{font-family:var(--ff-head);font-size:1.6rem;font-style:italic;color:#fff;position:relative}
+.venue-place{font-size:.95rem;color:rgba(255,200,140,.8);letter-spacing:.1rem;margin:.4rem 0 1.2rem;position:relative}
+.venue-badge{display:inline-block;border:1px solid var(--gold-lt);padding:.5rem 2rem;background:rgba(255,200,60,.08);font-family:var(--ff-head);font-size:1rem;font-style:italic;color:var(--gold-pale);letter-spacing:.15rem;position:relative}
+
+/* HASHTAG */
+.hashtag{position:relative;z-index:1;text-align:center;padding:1.6rem 2rem;background:var(--ivory);border-bottom:1px solid #e0c060}
+.hashtag p{font-style:italic;font-size:.95rem;color:var(--copper);margin-bottom:.4rem}
+.hashtag strong{font-family:var(--ff-head);font-size:1.4rem;font-style:italic;color:var(--maroon);display:inline-block;margin:.1rem .4rem}
+
+/* FOOTER */
+footer{position:relative;z-index:1;text-align:center;padding:2.5rem 2rem;background:linear-gradient(180deg,#1a0005,#0a0002);border-top:2px solid var(--gold)}
+.footer-seal{font-size:2.5rem;display:block;margin-bottom:.8rem;animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+footer p{color:var(--gold-pale);font-size:.95rem;line-height:1.8}
+footer .names-f{font-family:var(--ff-head);font-size:1.5rem;font-style:italic;color:var(--gold-shine);display:block;margin:.3rem 0}
+footer .small-f{font-size:.8rem;color:rgba(255,200,100,.45);letter-spacing:.05rem}
+footer .tel-f{font-family:var(--ff-tel);font-size:.85rem;color:rgba(255,200,140,.5);margin-top:.6rem;display:block}
+
+@media(max-width:620px){
+  .families{grid-template-columns:1fr;text-align:center}.fam-sep{display:none}
+  .verse,.story{padding-left:1.5rem;padding-right:1.5rem}
+  .events{padding:2rem 1rem}.venue{padding:2rem 1rem}.page-border{margin:8px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="page-border corners">
+
+  <!-- CORNER ORNAMENTS -->
+  <svg class="co tl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 96 L4 22 Q4 4 22 4 L96 4" stroke="#B8882A" stroke-width="1.5" fill="none"/>
+    <path d="M10 96 L10 26 Q10 10 26 10 L96 10" stroke="#B8882A" stroke-width=".5" fill="none" opacity=".4"/>
+    <circle cx="4" cy="4" r="4" fill="#B8882A" opacity=".8"/>
+    <path d="M18 4 Q22 -4 26 4 Q22 12 18 4Z" fill="#D4AF50" opacity=".85"/>
+    <path d="M4 18 Q-4 22 4 26 Q12 22 4 18Z" fill="#D4AF50" opacity=".85"/>
+    <path d="M14 14 Q8 8 14 20 Q20 14 14 14Z" fill="#B8882A" opacity=".6"/>
+    <path d="M30 10 Q34 4 38 10 Q34 16 30 10Z" fill="#D4AF50" opacity=".5"/>
+    <path d="M10 30 Q4 34 10 38 Q16 34 10 30Z" fill="#D4AF50" opacity=".5"/>
+  </svg>
+  <svg class="co tr" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 96 L4 22 Q4 4 22 4 L96 4" stroke="#B8882A" stroke-width="1.5" fill="none"/>
+    <path d="M10 96 L10 26 Q10 10 26 10 L96 10" stroke="#B8882A" stroke-width=".5" fill="none" opacity=".4"/>
+    <circle cx="4" cy="4" r="4" fill="#B8882A" opacity=".8"/>
+    <path d="M18 4 Q22 -4 26 4 Q22 12 18 4Z" fill="#D4AF50" opacity=".85"/>
+    <path d="M4 18 Q-4 22 4 26 Q12 22 4 18Z" fill="#D4AF50" opacity=".85"/>
+    <path d="M14 14 Q8 8 14 20 Q20 14 14 14Z" fill="#B8882A" opacity=".6"/>
+  </svg>
+  <svg class="co bl" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 96 L4 22 Q4 4 22 4 L96 4" stroke="#B8882A" stroke-width="1.5" fill="none"/>
+    <path d="M10 96 L10 26 Q10 10 26 10 L96 10" stroke="#B8882A" stroke-width=".5" fill="none" opacity=".4"/>
+    <circle cx="4" cy="4" r="4" fill="#B8882A" opacity=".8"/>
+    <path d="M18 4 Q22 -4 26 4 Q22 12 18 4Z" fill="#D4AF50" opacity=".85"/>
+    <path d="M4 18 Q-4 22 4 26 Q12 22 4 18Z" fill="#D4AF50" opacity=".85"/>
+  </svg>
+  <svg class="co br" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 96 L4 22 Q4 4 22 4 L96 4" stroke="#B8882A" stroke-width="1.5" fill="none"/>
+    <path d="M10 96 L10 26 Q10 10 26 10 L96 10" stroke="#B8882A" stroke-width=".5" fill="none" opacity=".4"/>
+    <circle cx="4" cy="4" r="4" fill="#B8882A" opacity=".8"/>
+    <path d="M18 4 Q22 -4 26 4 Q22 12 18 4Z" fill="#D4AF50" opacity=".85"/>
+    <path d="M4 18 Q-4 22 4 26 Q12 22 4 18Z" fill="#D4AF50" opacity=".85"/>
+  </svg>
+
+  <!-- HEADER -->
+  <header>
+    <div class="hdr-bot-line"></div>
+    <p class="tel-blessing">॥ శ్రీ గణేశాయ నమః ॥ &nbsp;·&nbsp; శుభ వివాహ నిమంత్రణ</p>
+    <div class="invite-ribbon">✦ &nbsp; Shubha Vivaha Nimantrana &nbsp; ✦</div>
+    <h1>With the blessings of our elders and the grace of the divine,<br>we joyfully invite you to celebrate the wedding of</h1>
+    <div class="names-wrap">
+      <span class="name-groom">Dr. Saicharan</span>
+      <span class="name-sep">❧ &amp; ❧</span>
+      <span class="name-bride">Padmaja</span>
+    </div>
+    <div class="date-wrap">
+      <span>23</span> April 2026 &nbsp;·&nbsp; Muhurtham <span>10:16 AM</span> &nbsp;·&nbsp; Koratla
+    </div>
+  </header>
+
+  <div class="div-band">❧ &nbsp; ✦ &nbsp; ❧ &nbsp; ✦ &nbsp; ❧</div>
+
+  <!-- VERSE -->
+  <div class="verse">
+    <p>"Two souls who met through maps, strategy and purpose —<br>now chart a new journey together, hand in hand."</p>
+    <span class="tel">ఇద్దరూ ఒకటై, జీవన పయనంలో కలసి ముందుకు సాగుతున్నారు</span>
+  </div>
+
+  <div class="rule-gold" style="margin-top:1.5rem"></div>
+
+  <!-- FAMILIES -->
+  <section class="families">
+    <div class="fam">
+      <h3>Groom's Family</h3>
+      <p class="person">Dr. Saicharan</p>
+      <p class="parents">Son of Sri &amp; Smt. [Father &amp; Mother Name]</p>
+      <p class="village">Karimnagar, Telangana</p>
+    </div>
+    <div class="fam-sep">🪷</div>
+    <div class="fam">
+      <h3>Bride's Family</h3>
+      <p class="person">Padmaja</p>
+      <p class="parents">Daughter of Sri &amp; Smt. [Father &amp; Mother Name]</p>
+      <p class="village">Koratla, Telangana</p>
+    </div>
+  </section>
+
+  <div class="rule-gold" style="margin-bottom:0"></div>
+
+  <!-- STORY -->
+  <section class="story">
+    <h2>From Mapping &amp; Strategy to Partnership</h2>
+    <p>What began as a shared passion for geospatial analysis and strategic vision blossomed into a bond built on mutual respect, intellectual curiosity and deep affection. Their journey — from professional colleagues to life partners — is a story that the red soil of Karimnagar will celebrate for generations.</p>
+  </section>
+
+  <div class="div-band" style="font-size:.85rem;letter-spacing:.5rem">✦ &nbsp; పెళ్లి వేడుకలు &nbsp; ✦</div>
+
+  <!-- EVENTS -->
+  <section class="events">
+    <h2 class="events-title">Wedding Celebrations</h2>
+    <p class="events-sub">✦ &nbsp; Five Sacred Rituals &nbsp; ✦</p>
+    <div class="grid">
+
+      <!-- 1. POCHAM PANDUGA -->
+      <div class="card">
+        <div class="art-pocham">
+          <span class="art-label">photo here</span>
+          <div class="rangoli-line"></div>
+          <div class="diya-row">
+            <div class="diya"><div class="diya-body"></div><div class="flame"></div></div>
+            <div class="diya"><div class="diya-body"></div><div class="flame"></div></div>
+            <div class="diya"><div class="diya-body"></div><div class="flame"></div></div>
+            <div class="diya"><div class="diya-body"></div><div class="flame"></div></div>
+            <div class="diya"><div class="diya-body"></div><div class="flame"></div></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Pocham Panduga</h3>
+          <p class="meta"><span class="meta-dot">✦</span> పొచమ్మ పండుగ <span class="meta-dot">·</span> Day 1 — Evening</p>
+          <p>Seeking the blessings of Goddess Pochamma — beloved village deity of Karimnagar — with traditional <em>bathukamma</em> flowers, oil diyas and folk songs sung at dusk by the women of the family.</p>
+        </div>
+      </div>
+
+      <!-- 2. HALDI -->
+      <div class="card">
+        <div class="art-haldi">
+          <span class="art-label">photo here</span>
+          <div class="turmeric-dots"></div>
+          <div class="haldi-bowl"></div>
+          <div class="leaf-row">
+            <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Haldi — Pasupu Ceremony</h3>
+          <p class="meta"><span class="meta-dot">✦</span> పసుపు కుంకుమ <span class="meta-dot">·</span> Day 2 — Morning</p>
+          <p>Golden turmeric paste applied to bride and groom alike, accompanied by the cheerful sound of <em>nadaswaram</em> and songs celebrating Karimnagar's centuries-old bridal traditions.</p>
+        </div>
+      </div>
+
+      <!-- 3. PELLI KODUKU -->
+      <div class="card">
+        <div class="art-pelli">
+          <span class="art-label">photo here</span>
+          <div class="confetti-row"></div>
+          <div class="arch"><div class="garland"></div></div>
+          <div class="horse">
+            <div class="horse-head"></div>
+            <div class="horse-body"></div>
+            <div class="horse-legs"></div>
+          </div>
+          <div class="ground-strip"></div>
+        </div>
+        <div class="card-body">
+          <h3>Pelli Koduku</h3>
+          <p class="meta"><span class="meta-dot">✦</span> పెళ్లి కొడుకు <span class="meta-dot">·</span> Day 2 — Evening</p>
+          <p>The grand procession of the groom — adorned with a <em>topor</em> crown, jasmine garlands, and the warm welcome of the bride's family — marking the auspicious arrival at Koratla mandapam.</p>
+        </div>
+      </div>
+
+      <!-- 4. JILAKARA BELLAM — full width, THE muhurtham -->
+      <div class="card grid-full">
+        <div class="art-jilakara" style="height:200px">
+          <span class="art-label">photo here</span>
+          <div class="kalash l"><div class="kalash-top"></div><div class="kalash-neck"></div><div class="kalash-body"></div></div>
+          <div class="kalash r"><div class="kalash-top"></div><div class="kalash-neck"></div><div class="kalash-body"></div></div>
+          <div class="smoke"></div><div class="smoke"></div><div class="smoke"></div>
+          <div class="fire-wrap">
+            <div class="fire-side l"></div>
+            <div class="fire-side r"></div>
+            <div class="fire-base"></div>
+            <div class="fire-main"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="muhurtham-badge">✦ &nbsp; THE MUHURTHAM &nbsp; ✦</div>
+          <h3>Jilakara Bellam</h3>
+          <p class="meta"><span class="meta-dot">✦</span> జీలకర్ర బెల్లం <span class="meta-dot">·</span> 23 April 2026 &nbsp;·&nbsp; <strong>10:16 AM</strong> (Auspicious Moment)</p>
+          <p>At the sacred <em>muhurtham</em> of <strong>10:16 AM</strong>, the bride and groom each place their hand on the other's head bearing a mix of cumin seeds (<em>jilakara</em>) and jaggery (<em>bellam</em>) — symbolising that life with this person will always be a perfect blend of strength and sweetness. The most intimate and defining moment of the Telugu wedding, witnessed in reverent silence by all gathered.</p>
+        </div>
+      </div>
+
+      <!-- 5. MUDU MULLU -->
+      <div class="card grid-full">
+        <div class="art-mudu" style="height:160px">
+          <span class="art-label">photo here</span>
+          <div class="mandala"></div><div class="mandala"></div><div class="mandala"></div>
+          <div class="rose-c">
+            <div class="petal" style="--r:0deg"></div><div class="petal" style="--r:45deg"></div>
+            <div class="petal" style="--r:90deg"></div><div class="petal" style="--r:135deg"></div>
+            <div class="petal" style="--r:180deg"></div><div class="petal" style="--r:225deg"></div>
+            <div class="petal" style="--r:270deg"></div><div class="petal" style="--r:315deg"></div>
+          </div>
+          <div class="thorn-trio">
+            <div class="thorn"></div><div class="thorn"></div><div class="thorn"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3>Mudu Mullu</h3>
+          <p class="meta"><span class="meta-dot">✦</span> మూడు ముళ్ళు <span class="meta-dot">·</span> Following the Muhurtham</p>
+          <p>The three sacred knots — <em>mudu mullu</em> — tied by the groom to the bride's <em>maangalyam</em>, each representing body, mind and soul. Every knot a vow; every vow, a lifetime.</p>
+        </div>
+      </div>
+
+      <!-- 6. KALYANAM — grand full width -->
+      <div class="card grid-full">
+        <div class="art-kalyanam">
+          <span class="art-label">photo here</span>
+          <div class="pillar p1"></div><div class="pillar p2"></div>
+          <div class="pillar p3"></div><div class="pillar p4"></div>
+          <div class="mandap-roof"></div>
+          <div class="swag"></div><div class="swag"></div>
+          <div class="swag"></div><div class="swag"></div>
+          <div class="silh bride"><div class="silh-head"></div><div class="silh-body"></div></div>
+          <div class="silh groom"><div class="silh-head"></div><div class="silh-body"></div></div>
+          <div class="center-fire"><div class="c-fire-base"></div><div class="c-fire-body"></div></div>
+          <div class="flower-base"></div>
+        </div>
+        <div class="card-body">
+          <h3>Kalyanam — The Grand Wedding Ceremony</h3>
+          <p class="meta"><span class="meta-dot">✦</span> కళ్యాణం <span class="meta-dot">·</span> 23 April 2026 &nbsp;·&nbsp; Koratla, Karimnagar District</p>
+          <p>After the <em>jilakara bellam</em> muhurtham and <em>mudu mullu</em>, Dr. Saicharan and Padmaja take the sacred <em>saptapadi</em> — seven vows around the holy fire — blessed by family priests versed in Telangana's ancient Vaidic tradition. Expect the fragrance of jasmine, the sound of <em>nadaswaram</em> and conch shells, and the joyful ululations of the women of Karimnagar ringing through the mandapam as two families become one.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="venue">
+    <h2>Venue &amp; Details</h2>
+    <p class="venue-sub">✦ &nbsp; KALYANA VEDIKA &nbsp; ✦</p>
+    <p class="venue-name">[Kalyana Mandapam Name]</p>
+    <p class="venue-place">Koratla, Karimnagar District &nbsp;·&nbsp; Telangana — 505 326</p>
+    <div class="venue-badge">23 April 2026 &nbsp; · &nbsp; Muhurtham 10:16 AM</div>
+  </section>
+
+  <!-- HASHTAG -->
+  <div class="hashtag">
+    <p>Capture the joy &amp; share your blessings with us</p>
+    <strong>#SaMajaVaraGamana</strong>
+    <strong>#SaMajaKalyanam</strong>
+  </div>
+
+  <div class="div-band">❧ &nbsp; శుభాకాంక్షలు &nbsp; ❧</div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-seal">🪷</span>
+    <p>With love, warmth &amp; gratitude from</p>
+    <span class="names-f">Dr. Saicharan &amp; Padmaja</span>
+    <p class="small-f">and both our families from Karimnagar &amp; Koratla, Telangana</p>
+    <span class="tel-f">మీ రాక కోసం ఎదురు చూస్తున్నాం · We await you with open hearts</span>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>
