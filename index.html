@@ -3,301 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>SaMajaParinayam - Wedding Invite</title>
-  <meta name="theme-color" content="#EDC967">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='16' cy='16' rx='14' ry='14' fill='%23F3E6BE' stroke='%23B48828' stroke-width='2'/%3E%3Cpath d='M16 6C18.5 11.5 25 12 25 17C25 21.5 20 25 16 25C12 25 7 21.5 7 17C7 12 13.5 11.5 16 6Z' fill='%23E1BC50' stroke='%23B48828' stroke-width='1.2'/%3E%3C/svg%3E">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Noto+Sans+Telugu:wght@500;700&display=swap" rel="stylesheet">
+  <title>SaMajaParinayam · Telugu Wedding Invitation</title>
+  <meta name="theme-color" content="#B48828">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Noto+Serif:wght@400;700&family=Noto+Sans+Telugu:wght@700&display=swap" rel="stylesheet">
   <style>
   :root {
-    --gold-light: #F9F6EF;
-    --gold-shadow: #edc967;
-    --gold-main: #B48828;
-    --rose: #CA4062;
-    --maroon: #73222c;
-    --accent: #4D785A;
-    --card-shadow: 0 2px 24px 0 #B4882844;
+    --gold: #DFB138;
+    --saffron: #E3852F;
+    --crimson: #981C1C; 
+    --cream: #FCFAF4; 
+    --maroon: #731616;
+    --border: #E3C99B;
+    --rose: #D95965;
+  }
+  html {
+    scroll-behavior:smooth;
   }
   body {
-    background: radial-gradient(circle, #f7eadb 0%, #fdf6e7 100%);
-    min-height: 100vh;
+    background: radial-gradient(ellipse at 60% 10%, #FFFBE5 70%, #FFF8EA 100%);
     color: var(--maroon);
-    font-family: 'Cormorant Garamond', 'Noto Sans Telugu', serif;
-    margin:0;
-    padding:0;
+    font-family: 'Cormorant Garamond', 'Noto Serif', serif;
+    margin: 0;
+    padding: 0;
   }
   .container {
-    max-width: 820px;
-    margin: 36px auto 28px auto;
-    background: linear-gradient(120deg, #fbedd6 60%, #f7e3b9 100%);
-    border-radius: 22px;
-    box-shadow: 0 4px 32px #B4882822,0 1.5px 0 #F1DD98;
-    border: 3px double var(--gold-main);
-    position:relative;
+    background: linear-gradient(137deg, #faf3d7 60%, #fbeee0 100%);
+    max-width: 900px;
+    margin: 32px auto 24px auto;
+    border-radius: 25px;
+    border: 4.5px solid var(--gold);
+    box-shadow: 0 2px 52px #9d690f1a, 0 0 0 6px #fffbe858;
     overflow: hidden;
-    padding-bottom: 24px;
+    position: relative;
+    padding-bottom: 30px;
   }
-  .top-gradient, .bottom-gradient {
-    content:'';
-    position: absolute; left:0; right:0;
-    height:32px; z-index:6;
-    background: repeating-linear-gradient(90deg,rgba(236,206,82,.18) 0 70px,transparent 70px 140px),
-                linear-gradient(90deg,#fbeecf 0%,#edc96777 90%);
-    pointer-events: none;
+  .floral-top,.floral-bottom {
+    width:100%;height:52px;background: 
+      url('https://raw.githubusercontent.com/saicharanvasala/SaMajaParinayam/main/floral-top.svg') repeat-x center;
+    background-size:auto 52px;
+    display:block;
   }
-  .top-gradient { top:0; }
-  .bottom-gradient { bottom:0; height:24px;}
+  .floral-bottom {transform:scaleY(-1)}
   header {
+    padding-top: 16px;
     text-align:center;
-    margin:24px 0 18px 0;
-    padding:10px 0 0 0;
+    margin-bottom: 0;
     position:relative;
     z-index:2;
   }
-  .patternband {
-    background: repeating-linear-gradient(90deg, #edc96733 0 13px, transparent 13px 32px);
-    height: 8px; margin: 0 0 18px 0;
-    border-radius: 2px;
-  }
-  .heading-twin {
-    font-family:'Cormorant Garamond',serif;
-    letter-spacing: .08em;
-    font-size: 2.15em;
-    color: var(--maroon);
-    margin: 0 0 2px 0;
-    font-weight: 700;
-    text-shadow: 0 3px 7px #b4882832;
-    background: linear-gradient(90deg,#ffecb3,#ffe580 50%,#ffecb3 100%);
-    background-clip: text;
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;text-fill-color:transparent;
-    display: inline-block;
-    padding: 0 .3em;
-    border-radius:7px;
-  }
-  .subtitle {
-    font-family: 'Noto Sans Telugu',sans-serif;
-    color:var(--gold-main);
-    font-size:1.02em;
-    margin-bottom:0.2em;
-  }
-  .couple-names {
-     margin: 1.4em 0 0.30em 0;
-     font-size: 2.0em;
-     font-family: 'Cormorant Garamond',serif;
-     letter-spacing: .03em;
-     color: var(--rose);
-     text-shadow: 0 2px 8px #CA406244;
-     font-weight:bold;
-  }
-  .amp { color: var(--gold-main); margin: 0 8px; font-size:1.6em;vertical-align:-0.04em;}
-  .date-slab {
-    margin: 12px auto 0 auto;
-    padding: .28em 1.9em;
-    border-radius: 44px;
-    display: inline-block;
-    background: linear-gradient(90deg,#fffbe6 0,#f7e3b9 99%);
-    border: 1.7px solid var(--gold-main);
-    box-shadow: 0 2px 8px #b488281a;
-    letter-spacing:.08em;
-    font-size:1.08em;
-    color:var(--maroon);
-    font-weight:600;
-  }
-  .blessing {
-    margin: 1.9em 0 .7em 0;
-    font-size: 1.17em;
-    color: #8a5d16;
-    font-style:italic;
-    font-family: 'Noto Sans Telugu',sans-serif;
-    letter-spacing:.041em;
-  }
-  .card-section {
-    background: var(--gold-light);
-    border: 1px solid var(--gold-main);
-    box-shadow: var(--card-shadow);
-    border-radius: 15px;
-    margin: 40px 24px 16px 24px;
-    padding: 16px 18px;
-    position:relative;
-    z-index:1;
-  }
-  .card-section h3, .event-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size:1.25em;
+  .wedding-title {
+    font-family:'Noto Sans Telugu', serif;
+    color:var(--crimson);
+    font-size:2.2em;
     font-weight:700;
-    color:var(--rose);
-    letter-spacing: .05em;
-    margin: .1em 0 .16em 0;
+    letter-spacing:0.04em;
+    margin-top:18px;
+    margin-bottom:6px;
+    text-shadow:0 2px 12px #DFB13822;
+  }
+  .english-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.1em;
+    background: linear-gradient(90deg,#DFB138 10%,#E3852F 80%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    font-weight: 700; letter-spacing: .07em; margin:.14em 0;
+    padding:0 .26em;
+    text-shadow: 0px 2px 12px #E3852F25;
+  }
+  .geo-pattern {
+    width: 80px; height: 6px; margin:18px auto 11px auto;
+    background: repeating-linear-gradient(90deg,#E3852F 0 8px,#DFB138 8px 16px,#fff0 16px 24px);
+    border-radius:4px;
+  }
+  .festive-hr {
+    border:0; border-top:3px dashed var(--rose); width: 84%; margin:24px auto 24px auto; opacity:.50;
+  }
+  .welcome-msg {
+    font-size:1.18em;text-align:center;margin:0 auto;max-width:530px;color:var(--crimson); font-style:italic;
+    margin-bottom: 10px;
+    font-family: 'Noto Sans Telugu',sans-serif;
+    letter-spacing:.03em
+  }
+  .coords {
+    margin-top:14px;margin-bottom:18px;display:inline-block;padding:7px 16px;font-size:1em;
+    border-radius:24px;background:#fff3ce;border:1.3px solid var(--gold);color:var(--maroon);
+    box-shadow:0 1px 8px #DFB13818;
+    font-family:'Noto Serif',serif;letter-spacing:.04em;
+  }
+  .details-area {
+    background:linear-gradient(90deg,#fffbe7 60%,#fff7e0 100%);
+    border:1.7px solid var(--border);
+    border-radius:15px;margin:28px auto 25px auto;max-width:460px;box-shadow:0 2px 16px #DFB13815;
+    padding:18px;
+    font-size: 1.13em;
+    color: var(--maroon);
+    font-family: 'Noto Serif', serif;
+  }
+  .details-area b {color:var(--saffron);}
+  .event-section {
+    margin:38px 0 0 0;
   }
   .event-grid {
     display: grid;
-    gap: 22px;
-    padding: 6px 2px 0 2px;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 0 32px;
   }
   .event-card {
-    background: linear-gradient(110deg,#fffde9 60%,#fffaf1 100%);
-    border-radius: 12px;
-    box-shadow: 0 1.5px 12px #b4882822;
-    border: 1.2px solid #edc967;
-    padding: 16px 20px 12px 20px;
-    margin-bottom: 3px;
-    transition: box-shadow .23s;
+    background:linear-gradient(120deg,#fff8ea 60%,#ffefd5 100%);
+    border-radius:12px;
+    border:2px solid var(--gold);
+    box-shadow:0 2px 21px #DFB1382a;
+    padding:26px 22px 18px 22px;
+    margin-bottom: 6px;
     position:relative;
+    overflow:hidden;
   }
-  .event-card:hover { box-shadow: 0 5px 16px #b4882829; }
+  .event-card .borderbar {
+    position:absolute;top:0;right:0;left:0;height:8px;
+    background: repeating-linear-gradient(90deg, #E3852F 0 8px, #DFB138 8px 16px, transparent 16px 24px);
+    z-index:2;
+    border-radius:0 0 7px 7px;
+    opacity:.25;
+  }
+  .event-title {
+    font-family:'Noto Sans Telugu',sans-serif;
+    font-size:1.23em;font-weight:700;color:var(--maroon);margin-bottom:5px;margin-top:9px;letter-spacing:.05em;
+  }
   .event-icon {
-    font-size: 1.7em;
-    margin-bottom: 7px;
-    color:var(--gold-main);
-    display:block;
+    font-size:1.7em;display:block;color:var(--gold);margin-bottom:4px;
   }
   .event-date {
-    font-size: .93em;
-    color: var(--accent);
-    font-weight: 500;
-    margin:7px 0 3px 0;
-    font-family:'Noto Sans Telugu',sans-serif;
+    font-size:.96em;font-weight:600;color:var(--saffron);margin-bottom:8px;font-family:'Cormorant Garamond',serif;
   }
   .event-desc {
-    color: #47402c;
-    font-size:1.07em;
-    line-height:1.72;
-    margin-top:2px;margin-bottom:3px;
+    font-size:1.08em;line-height:1.68;color:#832800;
+    font-family:'Noto Serif',serif;
   }
+  .event-desc ul {margin:8px 0 0 22px;padding:0;}
+  .event-desc li {font-size:.97em;line-height:1.43em;list-style:circle;color:var(--rose);}
   .map-card {
-    background: linear-gradient(120deg,#f7ecd7 60%,#fff5e0 100%);
-    padding: 15px 10px 5px 10px;
-    border-radius:15px;
-    border:1.5px solid #b48828;
-    margin: 36px 24px 0 24px;
-    box-shadow: 0 1.5px 10px #b4882816;
+    margin:34px auto 0 auto;max-width:94%;background:linear-gradient(40deg,#fffbe4 72%,#fbeee0 100%);
+    border-radius:15px;padding:14px 3% 7px 3%;border:2px solid #DFB13842; box-shadow:0 2px 8px #DFB13816;
     text-align:center;
   }
-  .map-card h3 {
-    margin: 0 0 8px 0;
-    color: var(--accent);
-    font-size: 1.17em;
-    font-family: 'Cormorant Garamond',serif;
-    letter-spacing:.08em;
-  }
+  .map-card h3 {font-size:1.15em;color:var(--crimson);margin:.4em 0 .25em;}
   .map-wrap {
-    max-width: 98%; margin:8px auto;
-    border-radius: 13px;
-    overflow: hidden;
+    border-radius: 13px; overflow: hidden;
     border: 2.1px solid #edc967;
-    box-shadow: 0 3px 14px #b4882817;
+    box-shadow: 0 2px 12px #b488281a;
+    margin:0 auto;
+    width: 100%;
+    max-width:98%;
   }
   .hashtag {
-    text-align:center;
-    color:var(--rose);
-    font-size: 1.13em;
-    margin: 24px 0 6px;
-    letter-spacing:.07em;
     font-family: 'Cormorant Garamond', serif;
+    margin:30px 0 6px 0;padding:0;font-size:1.16em;color:var(--rose);letter-spacing:.08em;text-align:center;
   }
   .footer {
-    margin-top:38px;
-    color: #6D4600;
+    margin:28px 0 0 0;
+    color:#964B1F;
     text-align:center;
-    font-size:.96em;
+    font-size:1em;
     font-family: 'Noto Sans Telugu',sans-serif;
-    padding:8px 0 0 0;
-    opacity:.85;
+    opacity:.9;
+    padding-bottom:30px;
   }
-  @media (max-width: 600px) {
-    .container {padding:0}
-    .card-section, .map-card {margin:17px 4px;}
-    .date-slab{font-size:.99em}
-    .couple-names{font-size: 1.17em;}
+  @media (max-width: 900px) { .container {max-width: 99.4vw}}
+  @media (max-width:650px) {
+    .container{border-radius:14px}
+    .event-grid {grid-template-columns: 1fr;}
+    .event-card{padding:1.3em 0.6em;}
+    .map-wrap{min-width:93vw}
+    .floral-top,.floral-bottom{height:34px;background-size:auto 34px;}
+    .details-area{padding:1em;}
   }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="top-gradient"></div>
-    <header>
-      <div class="heading-twin">SaMajaParinayam <span style="color:var(--gold-main);font-size:.74em;vertical-align:middle;font-weight:400;">·</span> SaMajaParinayam</div>
-      <div class="subtitle">A Telangana Wedding to Remember</div>
-      <div class="couple-names">Dr. Saicharan <span class="amp">&amp;</span> Padmaja</div>
-      <div class="date-slab">April 23, 2026 | Muhurtham: 10:16 AM | Venue: Koratla</div>
-      <div class="blessing">With blessings from our families, we invite you to witness and celebrate our wedding journey!</div>
-    </header>
+<div class="container">
 
-    <div class="patternband"></div>
+  <!-- Floral SVG borders, use your actual SVG, or replace as needed -->
+  <div class="floral-top"></div>
 
-    <section class="card-section" aria-label="Wedding Events">
-      <h3>Traditional Event Schedule</h3>
-      <div class="event-grid">
-        <div class="event-card">
-          <span class="event-icon">🪔</span>
-          <div class="event-title">Pocham Panduga</div>
-          <div class="event-date">April 19 · Evening</div>
-          <div class="event-desc">A floral festival honouring village goddess Pochamma—women light oil lamps, sing, and decorate with Bathukamma patterns.</div>
-        </div>
-        <div class="event-card">
-          <span class="event-icon">🌼</span>
-          <div class="event-title">Haldi (Pasupu) Ceremony</div>
-          <div class="event-date">April 20 · Morning</div>
-          <div class="event-desc">Turmeric anointment for the bride & groom, with folk songs, joyful laughter, and saffron scents in the air! </div>
-        </div>
-        <div class="event-card">
-          <span class="event-icon">👑</span>
-          <div class="event-title">Pelli Koduku</div>
-          <div class="event-date">April 21 · Evening</div>
-          <div class="event-desc">Groom’s grand welcome procession, garland exchange, and blessings exchanged at the mandapam entrance.</div>
-        </div>
-        <div class="event-card">
-          <span class="event-icon">🔥</span>
-          <div class="event-title">Jilakara Bellam</div>
-          <div class="event-date">April 23 · Muhurtham (10:16 AM)</div>
-          <div class="event-desc">At the auspicious moment, cumin and jaggery placed on each other's heads—cherishing strength and sweetness for all time.</div>
-        </div>
-        <div class="event-card">
-          <span class="event-icon">💫</span>
-          <div class="event-title">Mudu Mullu</div>
-          <div class="event-date">After Muhurtham</div>
-          <div class="event-desc">Three sacred knots tied to the bride’s Mangalyam, representing body, mind, and soul—Telugu tradition’s heart.</div>
-        </div>
-        <div class="event-card">
-          <span class="event-icon">💒</span>
-          <div class="event-title">Kalyanam (Marriage Ceremony)</div>
-          <div class="event-date">April 23 · Forenoon</div>
-          <div class="event-desc">Saptapadi vows around the fire, joyful ululations, jasmine garlands, and blessings from both families as two hearts unite.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card-section" aria-label="Our Families">
-      <h3>Our Families</h3>
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px">
-        <div style="flex-basis:180px;min-width:160px">
-          <div class="event-title" style="color:var(--accent);margin-bottom:0.4em">Groom’s Family</div>
-          <div>Dr. Saicharan<br><small style="color:var(--maroon)">Koratla, Telangana</small></div>
-        </div>
-        <div style="font-size:2em;align-self:center;color:var(--rose)">⟡</div>
-        <div style="flex-basis:180px;min-width:160px">
-          <div class="event-title" style="color:var(--accent);margin-bottom:0.4em">Bride’s Family</div>
-          <div>Padmaja<br><small style="color:var(--maroon)">Koratla, Telangana</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="map-card" aria-label="Venue Location">
-      <h3>Wedding Venue: Katkam Sangaiah Function Hall</h3>
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.0120299257314!2d78.71057387519929!3d18.830490082324275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcd0b24de8de31d%3A0x569e3c7e968d4e87!2sKatkam%20Sangaiah%20Function%20Hall!5e1!3m2!1sen!2sin!4v1775625915223!5m2!1sen!2sin"
-          width="100%" height="320" style="min-height:220px;max-width:100%;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Wedding Venue Map"></iframe>
-      </div>
-      <div style="margin: 11px 0 5px 0;color:var(--maroon);font-size:1em;">Koratla, Telangana 505326</div>
-    </section>
-
-    <div class="hashtag">
-      #SaMajaKalyanam &nbsp;&nbsp;&middot;&nbsp;&nbsp; #SaMajaParinayam
+  <header>
+    <div class="wedding-title">సమజపరినయం</div>
+    <div class="english-main">SaMajaParinayam</div>
+    <div class="geo-pattern"></div>
+    <div class="welcome-msg">
+      Invitation to the #SaMaja Wedding! 🪷<br>
+      After years mapping the earth from above, Dr. Saicharan finally found his world in Padmaja.<br>
+      "We would be honoured for you to witness our #SaMajaVaraGamana as we enter this new chapter."
     </div>
-    <div class="footer">
-      We look forward to meeting you with love and blessings! <br>
-      <span style="color:var(--gold-main);">మీ రాక కోసం ఎదురుచూస్తున్నాం!</span>
+    <div class="coords">
+      <strong>🗓️ Date:</strong> 23-Apr-2026 &nbsp; | &nbsp;
+      <strong>⏰ Time:</strong> 10:16 AM &nbsp; | &nbsp;
+      <strong>📍 Venue:</strong> Koratla <br/>
+      <strong>🛰️ Coordinates:</strong> KSFP, Koratla
     </div>
-    <div class="bottom-gradient"></div>
+  </header>
+
+  <div class="details-area">
+    Your presence would be the most valuable data point in our celebration! <b>We look forward to seeing you!</b><br>
+    <span style="font-size:1.1em;color:var(--crimson);"><b>– Dr. Saicharan, Ph.D.</b></span>
   </div>
+
+  <hr class="festive-hr">
+
+  <section class="event-section">
+    <div class="geo-pattern"></div>
+    <div class="event-grid">
+      <!-- Pocham Panduga -->
+      <div class="event-card">
+        <div class="borderbar"></div>
+        <span class="event-icon">🪔</span>
+        <div class="event-title">Pocham Panduga</div>
+        <div class="event-date">April 19 &middot; Evening</div>
+        <div class="event-desc">
+          The auspicious beginning: An offering to Pochamma Thalli, the village deity. Womenfolk gather for folk songs, light clay lamps, and decorate spaces with bathukamma and beautiful floral rangoli, blessing the wedding journey ahead.
+        </div>
+      </div>
+
+      <!-- Haldi -->
+      <div class="event-card">
+        <div class="borderbar"></div>
+        <span class="event-icon">🌼</span>
+        <div class="event-title">Haldi (Pasupu) Ceremony</div>
+        <div class="event-date">April 20 &middot; Morning</div>
+        <div class="event-desc">
+          The golden touch: Turmeric is gently applied to the bride and groom, enveloping them in blessings, joy, and the laughter of family—invoking auspiciousness and radiant health for their new life.
+        </div>
+      </div>
+
+      <!-- Pelli Koduku -->
+      <div class="event-card">
+        <div class="borderbar"></div>
+        <span class="event-icon">👑</span>
+        <div class="event-title">Pelli Koduku</div>
+        <div class="event-date">April 21 &middot; Evening</div>
+        <div class="event-desc">
+          The groom’s anointing: A vibrant traditional Telangana ritual. Close relatives gather for a sacred blessing, and the groom is readied for the wedding, adorned in festive attire and greeted with music and mirth.
+        </div>
+      </div>
+
+      <!-- Jilakara Bellam (+ Mudu Mullu) -->
+      <div class="event-card">
+        <div class="borderbar"></div>
+        <span class="event-icon">🔥</span>
+        <div class="event-title">Jilakara Bellam</div>
+        <div class="event-date">April 23 &middot; Muhurtham: 10:16 AM</div>
+        <div class="event-desc">
+          The sacred moment: The bride and groom each place cumin and jaggery on one another, symbolizing an unbreakable and sweet marital bond before the sacred fire. As vows are exchanged:
+          <ul>
+            <li><b>Mudu Mullu:</b> Three knots are tied to the mangalyam, each representing a promise to join together in body, mind, and soul—the heart of Telugu wedding tradition.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-card" aria-label="Venue Location">
+    <h3>Wedding Venue: Katkam Sangaiah Function Hall</h3>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.0120299257314!2d78.71057387519929!3d18.830490082324275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcd0b24de8de31d%3A0x569e3c7e968d4e87!2sKatkam%20Sangaiah%20Function%20Hall!5e1!3m2!1sen!2sin!4v1775625915223!5m2!1sen!2sin"
+        width="100%" height="320" style="min-height:180px;max-width:100%;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Wedding Venue Map"></iframe>
+    </div>
+    <div style="margin: 12px 0 6px 0;color:var(--maroon);font-size:1em;">Koratla, Telangana 505326</div>
+  </section>
+
+  <div class="hashtag">
+    #SaMajaVaraGamana &nbsp;|&nbsp; #SaMajaKalyanam &nbsp;|&nbsp; #SaMajaParinayam
+  </div>
+  <div class="footer">
+    We await you with open hearts and warm blessings! <br>
+    <span style="color:var(--crimson)">మీ రాక కోసం ఎదురు చూస్తున్నాం!</span>
+  </div>
+
+  <div class="floral-bottom"></div>
+</div>
 </body>
 </html>
